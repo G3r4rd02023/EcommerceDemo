@@ -1,0 +1,19 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace EcommerceDemo.Models.Entidades
+{
+    public class DetalleVenta
+    {
+        public int Id { get; set; }
+
+        public Venta Venta { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        [MaxLength(200, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
+        public string Comentario { get; set; } = null;
+
+        public Producto Producto { get; set; }
+
+        public int Cantidad { get; set; }
+    }
+}
