@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EcommerceDemo.Models.Entidades
@@ -16,7 +17,7 @@ namespace EcommerceDemo.Models.Entidades
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public decimal Precio { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:N2}")]        
+               
         [Required(ErrorMessage = "El campo {0} es obligatorio.")]
         public int Inventario { get; set; }
 
@@ -29,6 +30,11 @@ namespace EcommerceDemo.Models.Entidades
 
         public Categoria Categoria { get; set; }
 
+        [Range(1, int.MaxValue, ErrorMessage = "Debes de seleccionar una categoria.")]
+        public int CategoriaId { get; set; }
+
+        [NotMapped]
+        public IEnumerable<SelectListItem> Categorias { get; set; }
 
     }
 }
