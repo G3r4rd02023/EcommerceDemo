@@ -15,5 +15,9 @@ namespace EcommerceDemo.Models.Entidades
         public Producto Producto { get; set; }
 
         public int Cantidad { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:C2}")]
+        
+        public decimal Total => Producto == null ? 0 : (decimal)Cantidad * Producto.Precio;
     }
 }

@@ -16,5 +16,12 @@ namespace EcommerceDemo.Models.Entidades
         public string Comentario { get; set; } = null;
         public Estado Estado { get; set; }
 
+        public ICollection<DetalleVenta> DetallesVenta { get; set; }
+             
+        public int Cantidad => DetallesVenta == null ? 0 : DetallesVenta.Sum(sd => sd.Cantidad);
+
+        [DisplayFormat(DataFormatString = "{0:C2}")]
+        [Display(Name = "Total")]
+        public decimal Total => DetallesVenta == null ? 0 : DetallesVenta.Sum(sd => sd.Total);
     }
 }
