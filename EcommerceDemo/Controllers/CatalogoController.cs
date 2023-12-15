@@ -117,11 +117,9 @@ namespace EcommerceDemo.Controllers
                 Cantidad = 1,
                 Usuario = usuario
             };
-
            
-
             _context.Temporales.Add(temporalSale);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();            
             return View(nameof(VerCarrito));
         }
 

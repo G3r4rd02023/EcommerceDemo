@@ -11,6 +11,7 @@
 }
 
 
+
 <div class="row">
     <div class=" card">
         <div class=" card-header">
@@ -106,21 +107,21 @@
                                 </td>
                                 <td>                                   
                                     <a onclick="showInPopup('@Url.Action("DisminuirCantidad", "Catalogo", new { id =item.Id }, Context.Request.Scheme)' ,
-                    'Disminuir Cantidad')" class="btn btn-outline-danger">-</a>
+                    '')" class="btn btn-outline-danger">-</a>
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Cantidad)
                                 </td>
                                 <td>
                                     <a onclick="showInPopup('@Url.Action("IncrementarCantidad", "Catalogo", new { id =item.Id }, Context.Request.Scheme)' ,
-                    'Incrementar Cantidad')" class="btn btn-outline-success">+</a>
+                    '')" class="btn btn-outline-success">+</a>
                                 </td>
                                 <td>
                                     @Html.DisplayFor(modelItem => item.Total)
                                 </td>
                                 <td>
                                     <a onclick="showInPopup('@Url.Action("Eliminar", "Catalogo", new { id =item.Id }, Context.Request.Scheme)' ,
-                    'Eliminar')" class="btn btn-outline-danger"><i class=" fas fa-trash"></i></a>
+                    '')" class="btn btn-outline-danger"><i class=" fas fa-trash"></i></a>
                                    
                                 </td>
                             </tr>

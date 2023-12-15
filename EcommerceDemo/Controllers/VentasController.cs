@@ -49,18 +49,18 @@ namespace EcommerceDemo.Controllers
             return View(venta);
         }
 
-        [Authorize(Roles = "Cliente")]
+        //[Authorize(Roles = "Cliente")]
         public async Task<IActionResult> MisCompras()
         {
             return View(await _context.Ventas
                 .Include(s => s.Usuario)
                 .Include(s => s.DetallesVenta)
                 .ThenInclude(sd => sd.Producto)
-                .Where(s => s.Usuario.Email == User.Identity.Name)
+                .Where(s => s.Usuario.Nombre == User.Identity.Name)
                 .ToListAsync());
         }
-
-        [Authorize(Roles = "Cliente")]
+        
+        //[Authorize(Roles = "Cliente")]
         public async Task<IActionResult> MisDetalles(int? id)
         {
             if (id == null)

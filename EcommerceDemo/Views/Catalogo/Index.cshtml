@@ -1,7 +1,7 @@
 ﻿
 @model EcommerceDemo.Models.CatalogoViewModel
 
-    <h2 class=" text-center text-success">Catálogo de Productos</h2>
+    <h2 class=" text-center text-white">Catálogo de Productos</h2>
 
 <style type="text/css">
     .card {
@@ -35,12 +35,8 @@
 </div>
 
 <a onclick="showInPopup('@Url.Action("VerCarrito", "Catalogo", Context.Request.Scheme)' ,
-                            '')" class="btn btn-outline-success btn-sm">Ver carrito (@Model.Cantidad) </a>
+                            '')" class="btn btn-outline-success btn-sm">Ver carrito </a>
 
-@* @if (Model.Cantidad > 0)
-{
-    <a asp-action="VerCarrito" class="btn btn-outline-primary">Ver Carro de Compras (@Model.Cantidad)</a>
-} *@
 
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">
@@ -57,7 +53,9 @@
         {
             <div class="col-md-3">
                 <div class="card mb-3 shadow-sm">
-                <img class="card-img-top" src="@producto.URLFoto" alt="Imagen del Producto" style="height:150px; max-width:200px;">
+                    <div class=" zoom">
+                    <img class="card-img-top" src="@producto.URLFoto" alt="Imagen del Producto" style="height:150px; max-width:200px;">
+                    </div>              
                     <div class="card-body">
                         <h5 class="card-title">@producto.Nombre</h5>
                        

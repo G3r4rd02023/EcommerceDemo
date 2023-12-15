@@ -34,5 +34,16 @@ namespace EcommerceDemo.Services
             return await _context.Usuarios
                .FirstOrDefaultAsync(u => u.Nombre == nombreUsuario);
         }
+
+        public bool ExisteRol(string nombreRol)
+        {            
+            return _context.Roles.Any(r => r.Nombre == nombreRol);
+        }
+
+        public Rol ObtenerRol(string nombreRol)
+        {
+            
+            return _context.Roles.FirstOrDefault(r => r.Nombre == nombreRol);
+        }
     }
 }

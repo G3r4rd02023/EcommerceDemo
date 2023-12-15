@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EcommerceDemo.Controllers
 {
-    [Authorize(Roles = "Cliente")]
+    
     public class CategoriasController : Controller
     {
         private readonly EcommerceContext _context;
